@@ -1,0 +1,2 @@
+# Ignore tous les dossiers node_modules des sous-dossiers
+**/node_modules
