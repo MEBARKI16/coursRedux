@@ -1,22 +1,29 @@
 import { createStore } from 'redux';
+import { createSlice } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 
 const initialState = { counter: 0, show: true };
 
-const StoreReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "incresby5":
-            return { ...state, counter: state.counter + action.value }
-        case "increment":
-            return { ...state, counter: state.counter + 1 };
-        case "decrement":
-            return { ...state, counter: state.counter - 1 };
-        case "setShow":
-            return { ...state, show: !state.show };
-        default:
-            return state;
-    }
-};
+const slideCounter = createSlice({
+    name: counter,
+    initialState,
+    reducers: {
+        Increment(state) {
+            state.counter++
+        },
+        Decrement(state) {
+            state.counter--
+        },
+        Incres(state, action) {
+            state.counter = state.counter + action.ammount
+        },
+        Toggle() { }
 
-const store = createStore(StoreReducer);
+    }
+})
+
+const store = configureStore({
+    reducer: slideCounter
+});
 
 export default store;
