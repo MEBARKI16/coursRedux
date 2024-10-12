@@ -7,13 +7,13 @@ const Counter = () => {
   const toggleCounterHandler = () => {
     dispatch({ type: "setShow" })
   };
-
+const value = 50;
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
       {show && <div className={classes.value}>{x}</div>}
       <div>
-        <button onClick={() => { dispatch({ type: "incresby5", value: 100 }) }}>Incres By 5</button>
+        <button onClick={() => { dispatch({ type: "incresby5", value: value }) }}>Incres By {value}</button>
         <button onClick={() => { dispatch({ type: "decrement" }) }}>Decrement</button>
         <button onClick={() => { dispatch({ type: "increment" }) }}>Increment</button>
       </div>
