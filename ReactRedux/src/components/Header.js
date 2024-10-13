@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <h1>Redux Auth</h1>
-      <nav>
+      {x && <nav>
         <ul>
           <li>
             <a href='/'>My Products</a>
@@ -18,10 +18,10 @@ const Header = () => {
             <a href='/'>My Sales</a>
           </li>
           <li>
-            {x && <button onClick={() => { dispatch(ActionAuth.logout()) }}>Logout</button>}
+            <button onClick={() => { dispatch(ActionAuth.logout()) }}>Logout</button>
           </li>
         </ul>
-      </nav>
+      </nav>}
     </header>
   );
 };
