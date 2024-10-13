@@ -18,6 +18,10 @@ const SliceManage = createSlice({
                     prix: action.payload.prix,
                     totalPrix: action.payload.prix
                 })
+                state.totalQuantite = state.items.length;
+            }
+            else {
+                isExiste.quantite++;
             }
         }
     }
