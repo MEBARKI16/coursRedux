@@ -23,7 +23,22 @@ const SliceManage = createSlice({
             else {
                 isExiste.quantite++;
             }
+        },
+        onPlus(state, action) {
+            const x = state.items.find(x => x.id === action.payload);
+            x.quantite++;
+        },
+        onMoin(state, action) {
+            const x = state.items.find(x => x.id === action.payload);
+            if (x.quantite !== 1) {
+                x.quantite--;
+            }
+            else {
+                const nouveauTableau = state.items.filter(objet => objet.id !== action.payload);
+                state.items = nouveauTableau
+            }
         }
+
     }
 })
 
