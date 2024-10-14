@@ -35,7 +35,8 @@ const SliceManage = createSlice({
             }
             else {
                 const nouveauTableau = state.items.filter(objet => objet.id !== action.payload);
-                state.items = nouveauTableau
+                state.items = nouveauTableau;
+                state.totalQuantite--;
             }
         }
 
